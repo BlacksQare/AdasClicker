@@ -65,8 +65,15 @@ body,html{
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
-    border-radius: 400rem;
+    border-radius: 300px;
     border-style: solid;
     border-width: 10px;
     border-color: white;
+    cursor: pointer;
+}
+
+#button-img{
+    width:100%;
+    overflow: hidden;
+    border-radius: 300px;
 }
