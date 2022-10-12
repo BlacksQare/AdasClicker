@@ -59,7 +59,7 @@ body,html{
 
 #main-button{
     position: absolute;
-    background-color: red;
+    background-color: black o !important;
     width: 300px;
     height: 300px;
     left: 50%;
@@ -68,7 +68,7 @@ body,html{
     border-radius: 300px;
     border-style: solid;
     border-width: 10px;
-    border-color: white;
+    border-color: rgba(0,0,0,0.5) !important;
     cursor: pointer;
 }
 
@@ -76,4 +76,5 @@ body,html{
     width:100%;
     overflow: hidden;
     border-radius: 300px;
+    /* opacity: 0.5; */
 }
