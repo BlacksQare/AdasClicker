@@ -1,3 +1,3 @@
 function mainButton(){
-    alert("adas");
+    console.log("adas");
 }
