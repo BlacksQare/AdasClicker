@@ -34,11 +34,13 @@ var initialY = null;
             console.log("swiped up");
             document.getElementById("bottombar").style.height="70%";
             document.getElementById("main-button").style.top="30%";
+            document.getElementById("main-button").style.width="250px"
         }
         else{
             console.log("swiped down");
             document.getElementById("bottombar").style.height="100px";
             document.getElementById("main-button").style.top="50%";
+            document.getElementById("main-button").style.width="300px"
         }
     }
 
