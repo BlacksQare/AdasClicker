@@ -96,3 +96,42 @@ body,html{
     border-radius: 300px;
     /* opacity: 0.5; */
 }
+#profile{
+    width:80%;
+    position: fixed;
+    height: 100px;
+    background-color: rgba(255,255,255,0.1) !important;
+    /* background-color: red; */
+    margin: 0px;
+    right: 0px;
+    text-align: right;
+    /* align-items: right; */
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    -o-backdrop-filter: blur(25px);
+    -moz-backdrop-filter: blur(25px);
+}
+#AF{
+    width:100%;
+    position: fixed;
+    height: 20px;
+    background-color: rgba(0,0,0,0.1) !important;
+    /* background-color: red; */
+    margin: 0px;
+    left: 0px;
+    top: 40px;
+    text-align: justify;
+}
+#AdasPS{
+    font-size: 10px;
+    text-align: left;
+    top: 150px;
+}
+#Points{
+    font-size: small;
+    text-align: center;
+}
+/* #Upg1{
+    font-size: 7px;
+    text-align: left;
+} */
