@@ -1,9 +1,9 @@
 console.log("bottombar.js loaded");
 
-var bottombar=document.querySelector("#bottombar");
+// var bottombar=document.querySelector("#bottombar");
 
-bottombar.addEventListener("touchstart", startTouch, false);
-bottombar.addEventListener("touchmove", moveTouch, false);
+document.addEventListener("touchstart", startTouch, false);
+document.addEventListener("touchmove", moveTouch, false);
 
 
 var initialX = null;
