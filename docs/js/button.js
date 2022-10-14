@@ -8,7 +8,7 @@ function mainButton(){
     AdasCoins+=1
 
 
-    document.getElementById("Points").innerHTML="AdasCoins="+AdasCoins;
+    document.getElementById("Points").innerHTML="A: "+AdasCoins;
 }
 
 /* function upg1(){

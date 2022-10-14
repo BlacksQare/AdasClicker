@@ -123,9 +123,14 @@ body,html{
     text-align: justify;
 }
 #AdasPS{
-    font-size: 10px;
+    /* font-size: 10px; */
     text-align: left;
-    top: 150px;
+    /* top: 150px; */
+    position:absolute;
+    top: 0;
+    left: 0;
+    font-size: small;
+    margin-left: 15px;
 }
 #Points{
     font-size: small;
