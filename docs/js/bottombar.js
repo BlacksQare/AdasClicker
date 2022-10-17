@@ -1,51 +1,64 @@
 console.log("bottombar.js loaded");
 
-var bottombar=document.querySelector("#bottombar");
+var bottombar=document.getElementById("bottombar");
 
-bottombar.addEventListener("touchstart", startTouch, false);
-bottombar.addEventListener("touchmove", moveTouch, false);
+bottombar.addEventListener("touchstart", startTouch);
+bottombar.addEventListener("touchmove", moveTouch);
+bottombar.addEventListener("touchend", endTouch);
 
+// window.addEventListener("touchstart", startTouch);
+// window.addEventListener("touchmove", moveTouch);
+// window.addEventListener("touchend", endTouch);
 
-var initialX = null;
-var initialY = null;
+var initialX=null;
+var initialY=null;
+var diffX=null;
+var diffY=null;
+var initialHeight=bottombar.clientHeight;
 
-  function startTouch(e) {
+function startTouch(e) {
+    initialHeight=bottombar.clientHeight;
     initialX = e.touches[0].clientX;
     initialY = e.touches[0].clientY;
   };
 
-  function moveTouch(e) {
-    if (initialX === null) {
-      return;
-    }
+function moveTouch(e) {
+  document.getElementById("bottombar").style.transition="0s"
+  if (initialX === null) {
+    return;
+  }
 
-    if (initialY === null) {
-      return;
-    }
+  if (initialY === null) {
+    return;
+  }
 
-    var currentX = e.touches[0].clientX;
-    var currentY = e.touches[0].clientY;
+  var currentX = e.touches[0].clientX;
+  var currentY = e.touches[0].clientY;
 
-    var diffX = initialX - currentX;
-    var diffY = initialY - currentY;
+  diffX = initialX - currentX;
+  diffY = initialY - currentY;
 
-    if (Math.abs(diffX) < Math.abs(diffY)) {
-        if (diffY > 0) {
-            console.log("swiped up");
-            document.getElementById("bottombar").style.height="70%";
-            document.getElementById("main-button").style.top="30%";
-            document.getElementById("main-button").style.width="250px"
-        }
-        else{
-            console.log("swiped down");
-            document.getElementById("bottombar").style.height="100px";
-            document.getElementById("main-button").style.top="50%";
-            document.getElementById("main-button").style.width="300px"
-        }
-    }
+  bottombar.style.height=initialHeight+diffY+"px";
+  console.log(diffX, diffY);
+};
 
-    initialX = null;
-    initialY = null;
+function endTouch(e){
+  document.getElementById("bottombar").style.transition="0.2s";
+  if (Math.abs(diffX) < Math.abs(diffY)) {
+      if (diffY > 0) {
+          console.log("swiped up", diffY);
+          document.getElementById("bottombar").style.height="70%";
+          document.getElementById("main-button").style.top="30%";
+          document.getElementById("main-button").style.width="250px"
+      }
+      else{
+          console.log("swiped down", diffY);
+          document.getElementById("bottombar").style.height="100px";
+          document.getElementById("main-button").style.top="50%";
+          document.getElementById("main-button").style.width="300px"
+      }
+  }
 
-    e.preventDefault();
-  };
+  initialX = null;
+  initialY = null;
+}

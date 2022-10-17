@@ -22,7 +22,6 @@ function upg1(){
 
 async function upg(){
     while(true){
-        console.log("tak");
         document.getElementById("main-button");
         AdasCoins+=APS;
         document.getElementById("Points").innerHTML="A: "+AdasCoins;
