@@ -1,6 +1,7 @@
 console.log("script.js loaded");
 
 var APS=0;
+var upgrade_cost=5;
 
 function sleep(milliseconds) {
     return new Promise(resolve => setTimeout(resolve, milliseconds));
@@ -8,25 +9,41 @@ function sleep(milliseconds) {
 
 var AdasCoins = 0;
 
-function mainButton(){
-    AdasCoins+=1
+async function mainButton(){
+    AdasCoins+=1;
+    document.getElementById("Points").innerHTML=AdasCoins;
+    document.getElementById("background").style.width="130%";
+    document.getElementById("background").style.height="130%";
+    document.getElementById("main-button").style.width="280px";
+    await sleep(50);
+    document.getElementById("background").style.width="120%";
+    document.getElementById("background").style.height="120%";
+    document.getElementById("main-button").style.width="300px";
+}
 
-
-    document.getElementById("Points").innerHTML="A: "+AdasCoins;
+async function AddAdas(ADAS){
+    for(i=0; i<6; i++){
+        AdasCoins+=Math.floor(ADAS/6);
+        document.getElementById("Points").innerHTML=AdasCoins;
+        await sleep(1000/6);
+    }
+    AdasCoins+=ADAS%6;
+    document.getElementById("Points").innerHTML=AdasCoins;
 }
 
 function upg1(){
-    APS+=1;
-    document.getElementById("APS").innerHTML=APS+" A/s";
+    if(upgrade_cost<=AdasCoins){
+        AdasCoins-=upgrade_cost;
+        upgrade_cost=Math.floor(upgrade_cost*1.5);
+        APS+=1;
+        document.getElementById("APS").innerHTML=APS+" A/s <br> Cost: "+upgrade_cost+"A";
+    }
 }
 
 async function upg(){
     while(true){
-        document.getElementById("main-button");
-        AdasCoins+=APS;
-        document.getElementById("Points").innerHTML="A: "+AdasCoins;
-        // document.getElementById("AdasPS").innerHTML="AdasPerSecond=";
-        await sleep(1000);
+        await AddAdas(APS);
+        await sleep(1);
     }
 }
 

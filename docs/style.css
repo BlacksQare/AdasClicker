@@ -20,6 +20,19 @@ body,html{
     overscroll-behavior: none;
 }
 
+#background{
+    text-align: justify;
+    width: 120%;
+    height: 120%;
+    position: fixed;
+    overflow: none;
+    opacity: 0.1;
+    transition: 0.2s;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
 #adas-clicker{
     font-size: small;
     text-align: center;
@@ -29,7 +42,7 @@ body,html{
 #titlebar{
     width:100%;
     position: fixed;
-    height: 45px;
+    height: fit-content;
     background-color: rgba(0,0,0,0.1) !important;
     /* background-color: red; */
     margin: 0px;
@@ -93,7 +106,7 @@ body,html{
     border-width: 10px;
     border-color: rgba(0,0,0,0.5) !important;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.2s;
     /* transition-delay: 0.2s; */
 }
 
@@ -118,22 +131,51 @@ body,html{
     -o-backdrop-filter: blur(25px);
     -moz-backdrop-filter: blur(25px);
 }
-#AF{
-    width:100%;
-    position: fixed;
-    height: 20px;
-    background-color: rgba(0,0,0,0.1) !important;
-    /* background-color: red; */
-    margin: 0px;
-    left: 0px;
-    top: 40px;
-    text-align: justify;
+
+#upgrade-container{
+    position: absolute;
+    top: 80px;
+    display: grid;
+    grid-auto-flow: row;
+    margin-left: 20px;
+    margin-right: 20px;
+    width: calc(100% - 40px);
 }
+
+.upgrade{
+    display: inline-grid;
+    /* grid-auto-flow: column; */
+    grid-template-columns: max-content auto max-content;
+    grid-column-gap: 30px;
+    width: 100%;
+    margin: 0;
+}
+
+.upgrade-icon{
+    width: 50px;
+    border-radius: 1000px;
+}
+
+.upgrade-desc{
+    font-size: small;
+    text-align: justify;
+    margin: 0;
+}
+
+.upgrade-buy{
+    background-color: red;
+    width: 70px;
+    height: 30px;
+    margin: 0;
+    border-radius: 1000px;
+    text-align: center;
+}
+
 #APS{
     /* font-size: 10px; */
     text-align: left;
     /* top: 150px; */
-    position:absolute;
+    position: absolute;
     top: 0;
     left: 0;
     font-size: small;
