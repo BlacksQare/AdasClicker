@@ -11,7 +11,7 @@ var AdasCoins = 0;
 
 async function mainButton(){
     AdasCoins+=1;
-    document.getElementById("Points").innerHTML=AdasCoins;
+    document.getElementById("points-points").innerHTML=AdasCoins;
     document.getElementById("background").style.width="130%";
     document.getElementById("background").style.height="130%";
     document.getElementById("main-button").style.width="280px";
@@ -24,11 +24,11 @@ async function mainButton(){
 async function AddAdas(ADAS){
     for(i=0; i<6; i++){
         AdasCoins+=Math.floor(ADAS/6);
-        document.getElementById("Points").innerHTML=AdasCoins;
+        document.getElementById("points-points").innerHTML=AdasCoins;
         await sleep(1000/6);
     }
     AdasCoins+=ADAS%6;
-    document.getElementById("Points").innerHTML=AdasCoins;
+    document.getElementById("points-points").innerHTML=AdasCoins;
 }
 
 function upg1(){
@@ -36,7 +36,8 @@ function upg1(){
         AdasCoins-=upgrade_cost;
         upgrade_cost=Math.floor(upgrade_cost*1.5);
         APS+=1;
-        document.getElementById("APS").innerHTML=APS+" A/s <br> Cost: "+upgrade_cost+"A";
+        document.querySelector(".upgrade-cost").innerHTML=upgrade_cost;
+        document.getElementById("APS").innerHTML=APS+" A/s";
     }
 }
 
@@ -47,4 +48,5 @@ async function upg(){
     }
 }
 
+document.querySelector(".upgrade-cost").innerHTML=upgrade_cost;
 upg();

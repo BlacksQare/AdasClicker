@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,7 +13,10 @@
         <div id="titlebar">
             <p id="adas-clicker">Adas Clicker</p>
             <p id="APS">0 A/s <br> Cost: 5A</p>
-            <p id="Points">A: 0</p>
+            <div id="points-container">
+                <p id="points-points">A: 0</p>
+                <img src="img/Adasie/adas-logo.png" id="points-icon">
+            </div>
         </div>
         <div id="bottombar">
             <div id="bottombar-container">
@@ -23,7 +26,28 @@
                     <div class="upgrade">
                         <img class="upgrade-icon" src="img/Adasie/adas-logo.png">
                         <p class="upgrade-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
-                        <p class="upgrade-buy" type="button" onclick="upg1()">KUP</p>
+                        <div class="upgrade-button" type="button" onclick="upg1()">
+                            <p class="upgrade-buy">KUP</p>
+                            <p class="upgrade-cost">123</p>
+                        </div>
+                    </div>
+                    <div class="upgrade-divider"></div>
+                    <div class="upgrade">
+                        <img class="upgrade-icon" src="img/Adasie/adas-logo.png">
+                        <p class="upgrade-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                        <div class="upgrade-button" type="button" onclick="upg1()">
+                            <p class="upgrade-buy">KUP</p>
+                            <p class="upgrade-cost">123</p>
+                        </div>
+                    </div>
+                    <div class="upgrade-divider"></div>
+                    <div class="upgrade">
+                        <img class="upgrade-icon" src="img/Adasie/adas-logo.png">
+                        <p class="upgrade-desc">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</p>
+                        <div class="upgrade-button" type="button" onclick="upg1()">
+                            <p class="upgrade-buy">KUP</p>
+                            <p class="upgrade-cost">123</p>
+                        </div>
                     </div>
                 </div>
             </div>
