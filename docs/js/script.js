@@ -9,9 +9,19 @@ function sleep(milliseconds) {
 
 var AdasCoins = 0;
 
-async function mainButton(){
-    AdasCoins+=1;
-    document.getElementById("points-points").innerHTML=AdasCoins;
+async function showBottomBar(){
+    document.getElementById("bottombar").style.height="80%";
+    document.getElementById("main-button").style.top="30%";
+    document.getElementById("main-button").style.width="250px"
+}
+
+async function hideBottomBar(){
+    document.getElementById("bottombar").style.height="100px";
+    document.getElementById("main-button").style.top="50%";
+    document.getElementById("main-button").style.width="300px"
+}
+
+async function mainButtonAnimation(){
     document.getElementById("background").style.width="130%";
     document.getElementById("background").style.height="130%";
     document.getElementById("main-button").style.width="280px";
@@ -19,6 +29,19 @@ async function mainButton(){
     document.getElementById("background").style.width="120%";
     document.getElementById("background").style.height="120%";
     document.getElementById("main-button").style.width="300px";
+}
+
+async function showProfilePanel(){
+    document.getElementById("profile-panel").style.left="0";
+}
+
+async function hideProfilePanel(){
+    document.getElementById("profile-panel").style.left="100%";
+}
+
+async function mainButton(){
+    AdasCoins+=1;
+    document.getElementById("points-points").innerHTML=AdasCoins;
 }
 
 async function AddAdas(ADAS){

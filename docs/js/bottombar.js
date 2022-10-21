@@ -46,14 +46,10 @@ function endTouch(e){
   document.getElementById("bottombar").style.transition="0.1s";
   if (Math.abs(diffX) < Math.abs(diffY)) {
       if (diffY > 0 || Math.abs(diffY)<=150) {
-          document.getElementById("bottombar").style.height="70%";
-          document.getElementById("main-button").style.top="30%";
-          document.getElementById("main-button").style.width="250px"
+          showBottomBar();
       }
       else if(Math.abs(diffY)>=150){
-          document.getElementById("bottombar").style.height="100px";
-          document.getElementById("main-button").style.top="50%";
-          document.getElementById("main-button").style.width="300px"
+          hideBottomBar();
       }
   }
 
