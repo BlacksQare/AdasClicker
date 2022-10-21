@@ -2,6 +2,7 @@ console.log("script.js loaded");
 
 var APS=0;
 var upgrade_cost=5;
+var bottombar_triggered=false;
 
 function sleep(milliseconds) {
     return new Promise(resolve => setTimeout(resolve, milliseconds));
@@ -31,12 +32,12 @@ async function mainButtonAnimation(){
     document.getElementById("main-button").style.width="300px";
 }
 
-async function showProfilePanel(){
-    document.getElementById("profile-panel").style.left="0";
+function showProfilePanel(){
+    document.getElementById("profile-panel").style.width="100%";
 }
 
-async function hideProfilePanel(){
-    document.getElementById("profile-panel").style.left="100%";
+function hideProfilePanel(){
+    document.getElementById("profile-panel").style.width="0";
 }
 
 async function mainButton(){

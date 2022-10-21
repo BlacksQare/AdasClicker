@@ -249,13 +249,13 @@ body,html{
 } */
 
 #profile-panel{
-    width: 100%;
+    width: 0;
     height: calc(100% - 185px);
     overflow: hidden;
     background-color: red;
     opacity: 0.5;
     /* transition: 0.1s; */
-    left: 100%;
+    right: 0;
     top: 78px;
     margin: 0;
     position: absolute;

@@ -10,49 +10,52 @@ bottombar.addEventListener("touchend", endTouch);
 // window.addEventListener("touchmove", moveTouch);
 // window.addEventListener("touchend", endTouch);
 
-var initialX=null;
+// var initialX=null;
 var initialY=null;
-var diffX=null;
+// var diffX=null;
 var diffY=null;
 var initialHeight=bottombar.clientHeight;
 
 function startTouch(e) {
+    bottombar_triggered=true;
     initialHeight=bottombar.clientHeight;
-    initialX = e.touches[0].clientX;
+    // initialX = e.touches[0].clientX;
     initialY = e.touches[0].clientY;
   };
 
 function moveTouch(e) {
   document.getElementById("bottombar").style.transition="0s"
-  if (initialX === null) {
-    return;
-  }
+  // if (initialX === null) {
+    // return;
+  // }
 
   if (initialY === null) {
     return;
   }
 
-  var currentX = e.touches[0].clientX;
+  // var currentX = e.touches[0].clientX;
   var currentY = e.touches[0].clientY;
 
-  diffX = initialX - currentX;
+  // diffX = initialX - currentX;
   diffY = initialY - currentY;
 
   bottombar.style.height=initialHeight+diffY+"px";
-  console.log(diffX, diffY);
+  console.log(diffY);
 };
 
-function endTouch(e){
+async function endTouch(e){
   document.getElementById("bottombar").style.transition="0.1s";
-  if (Math.abs(diffX) < Math.abs(diffY)) {
+  // if (Math.abs(diffX) < Math.abs(diffY)) {
       if (diffY > 0 || Math.abs(diffY)<=150) {
           showBottomBar();
       }
       else if(Math.abs(diffY)>=150){
           hideBottomBar();
       }
-  }
+  // }
 
-  initialX = null;
+  // initialX = null;
+  await sleep(50);
+  bottombar_triggered=false;
   initialY = null;
 }
