@@ -18,25 +18,21 @@ body,html{
     overflow-x: hidden;
     color-scheme: dark !important;
     overscroll-behavior: none;
-}
-
-*:focus {
-    outline: 0;
-    outline: none;
-}
-    
+}    
 
 #background{
+    font-size: larger;
     text-align: justify;
-    width: 120%;
-    height: 120%;
+    width: 200%;
+    height: 200%;
     position: fixed;
     overflow: none;
     opacity: 0.1;
     transition: 0.2s;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    top: 0;
+    left: 0;
+    /* transform: translate(-50%, -50%); */
+    animation: background-scroll 3s linear infinite;
 }
 
 #titlebar{
@@ -133,16 +129,19 @@ body,html{
     position: fixed;
     background-color: black !important;
     width: 300px;
+    height: 300px;
+    margin: 0;
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
-    border-radius: 1000px;
+    border-radius: 10000px;
     border-style: solid;
     border-width: 10px;
-    border-color: rgba(0,0,0,0.5) !important;
+    border-color: rgba(255,255,255,0.2) !important;
     cursor: pointer;
-    transition: 0.2s;
+    transition: 150ms;
     /* transition-delay: 0.2s; */
+    /* animation: main-button-animation 5s infinite linear; */
 }
 
 #button-img{
@@ -280,7 +279,7 @@ body,html{
     /* background-color: rgba(0,0,0,0.95) !important; */
     background-color: black;
     opacity: 0;
-    /* transition: 0.1s; */
+    transition: 0.2s;
     right: 0;
     top: 78px;
     margin: 0;
@@ -294,6 +293,26 @@ body,html{
     border-top-right-radius: 0;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 0px;
+}
+
+#profile-title{
+    display: inline-grid;
+    grid-auto-flow: column;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+    grid-template-columns: max-content 1fr;
+    /* position: absolute; */
+    /* left: 50%; */
+    /* transform: translate(-5); */
+}
+
+#profile-title svg{
+    fill: rgb(22,126,215);
+}
+
+#profile-title div{
+    transform: translate(-12px);
 }
 
 #profile-panel-container{
@@ -334,4 +353,44 @@ body,html{
 #profile-desc-username, #global-rank{
     text-align: right;
     margin-right: 30px;
+}
+
+#profile-stats{
+    display: grid; 
+    grid-template-columns: max-content 1fr; 
+    width: calc(100% - 30px);
+    margin-left: 15px;
+}
+
+.stats-value{
+    text-align: right;
+}
+
+@keyframes background-scroll {
+    0%{
+        top: -100%;
+        left: -100%;
+    }
+
+    50%{
+        top: 0%;
+        left: 0%;
+    }
+
+    100%{
+        top: -100%;
+        left: -100%;
+    }
+}
+
+@keyframes main-button-animation {
+    0%{
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    50%{
+        transform: translate(-50%, -50%) rotate(180deg);
+    }
+    100%{
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
 }
