@@ -20,6 +20,12 @@ body,html{
     overscroll-behavior: none;
 }
 
+*:focus {
+    outline: 0;
+    outline: none;
+}
+    
+
 #background{
     text-align: justify;
     width: 120%;
@@ -118,6 +124,12 @@ body,html{
 }
 
 #main-button{
+    -webkit-tap-highlight-color:transparent;
+    -moz-tap-highlight-color:transparent;
+    -o-tap-highlight-color:transparent;
+    /* tap-highlight-color:transparent; */
+    outline: 0;
+    outline: none;
     position: fixed;
     background-color: black !important;
     width: 300px;
