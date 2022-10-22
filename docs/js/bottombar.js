@@ -14,10 +14,10 @@ bottombar.addEventListener("touchend", endTouch);
 var initialY=null;
 // var diffX=null;
 var diffY=null;
-var initialHeight=bottombar.clientHeight;
+var initialHeight=null;
+var panelInitialHeight=null;
 
 function startTouch(e) {
-    bottombar_triggered=true;
     initialHeight=bottombar.clientHeight;
     // initialX = e.touches[0].clientX;
     initialY = e.touches[0].clientY;
@@ -56,6 +56,5 @@ async function endTouch(e){
 
   // initialX = null;
   await sleep(50);
-  bottombar_triggered=false;
   initialY = null;
 }

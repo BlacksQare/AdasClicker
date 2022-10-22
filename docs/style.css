@@ -33,45 +33,68 @@ body,html{
     transform: translate(-50%, -50%);
 }
 
-#adas-clicker{
-    font-size: small;
-    text-align: center;
-    text-transform: uppercase;
-}
-
 #titlebar{
     width:100%;
     position: fixed;
     height: fit-content;
-    background-color: rgba(0,0,0,0.1) !important;
+    /* background-color: rgba(0,0,0,0.5) !important; */
+    background-color: black;
     /* background-color: red; */
     margin: 0px;
     left: 0px;
     top: 0px;
     text-align: right;
     /* align-items: right; */
-    backdrop-filter: blur(25px);
+    /* backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
     -o-backdrop-filter: blur(25px);
-    -moz-backdrop-filter: blur(25px);
+    -moz-backdrop-filter: blur(25px); */
     z-index: 3;
+}
+
+#adas-clicker{
+    font-size: small;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+#APS{
+    /* font-size: 10px; */
+    text-align: left;
+    /* top: 150px; */
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: small;
+    margin-left: 15px;
+}
+
+#profile-icon{
+    margin-right: 15px;
+    margin-top: 10px;
+    top: 0;
+    right: 0;
+    width: 25px;
+    position: absolute;
+    border-radius: 1000px;
 }
 
 #bottombar{
     width: 100%;
     position: fixed;
     height: 100px;
-    background-color: rgba(255,255,255,0.1) !important;
+    /* background-color: rgba(0,0,0,0.95) !important; */
+    background-color: black;
     /* background-color: red; */
     margin: 0px;
     left: 0px;
     bottom: 0px;
     text-align: right;
     /* align-items: right; */
-    backdrop-filter: blur(25px);
+    /* backdrop-filter: blur(25px);
     -webkit-backdrop-filter: blur(25px);
     -o-backdrop-filter: blur(25px);
-    -moz-backdrop-filter: blur(25px);
+    -moz-backdrop-filter: blur(25px); */
     border-top-left-radius: 30px;
     border-top-right-radius: 30px;
     z-index: 3;
@@ -214,16 +237,6 @@ body,html{
     margin-left: 2.5%;
 }
 
-#APS{
-    /* font-size: 10px; */
-    text-align: left;
-    /* top: 150px; */
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-size: small;
-    margin-left: 15px;
-}
 #points-container{
     font-size: small;
     text-align: right;
@@ -249,15 +262,64 @@ body,html{
 } */
 
 #profile-panel{
-    width: 0;
-    height: calc(100% - 185px);
+    width: 50px;
+    height: calc(100% - 188px);
     overflow: hidden;
-    background-color: red;
-    opacity: 0.5;
+    /* background-color: rgba(0,0,0,0.95) !important; */
+    background-color: black;
+    opacity: 0;
     /* transition: 0.1s; */
     right: 0;
     top: 78px;
     margin: 0;
-    position: absolute;
-    z-index: 4;
+    position: fixed;
+    z-index: 2;
+    /* backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    -o-backdrop-filter: blur(25px);
+    -moz-backdrop-filter: blur(25px); */
+    border-top-left-radius: 30px;
+    border-top-right-radius: 0;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 0px;
+}
+
+#profile-panel-container{
+    /* width: calc(100% - 30px); */
+    margin: 15px;
+    text-align: justify;
+    overflow-x:visible;
+    display: inline-grid;
+    grid-auto-flow: row;
+}
+
+#profile-profile{
+    display: inline-grid;
+    grid-auto-flow: column;
+    width: 100%;
+    height: 100px;
+    border-radius: 1000px;
+    background-color: rgba(255,255,255,0.1);;
+    /* border-style: solid;
+    border-color: rgba(255,255,255,0.3);
+    border-width: 2px; */
+    margin-bottom: 15px;
+    grid-column-gap: 10px;
+}
+
+#profile-picture{
+    /* position: absolute; */
+    margin: 5px;
+    width: 90px;
+    border-radius: 1000px;
+}
+
+#profile-picture img{
+    width: 90px;
+    border-radius: 1000px;
+}
+
+#profile-desc-username, #global-rank{
+    text-align: right;
+    margin-right: 30px;
 }
